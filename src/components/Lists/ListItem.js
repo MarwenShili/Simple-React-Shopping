@@ -1,19 +1,20 @@
 import ListForm from './ListForm'
-import './ListItem.module.css'
+import classes from  './ListItem.module.css'
+import Card from '../UI/Card'
 const ListItem = (props) => {
 
     console.log(props.name)
     return (
         <form>
-            <div className="row">
+            <div className={classes.row}>
                 <div className="col-sm-3">
-                    <div className="card">
+                    <Card >
                         <div className="card-body">
-                            <h5 className="card-title">{props.name}</h5>
+                            <h2 className="card-title">{props.name}</h2>
                             <p className="card-text">{props.description}</p>
                             <ListForm />
                         </div>
-                    </div>
+                    </Card>
                 </div>
             </div>
         </form>
