@@ -1,23 +1,25 @@
 import ListForm from './ListForm'
-import classes from  './ListItem.module.css'
-import Card from '../UI/Card'
+import classes from './ListItem.module.css'
+import React from 'react'
 const ListItem = (props) => {
 
     console.log(props.name)
     return (
-        <form>
-            <div className={classes.row}>
-                <div className="col-sm-3">
-                    <Card >
-                        <div className="card-body">
-                            <h2 className="card-title">{props.name}</h2>
-                            <p className="card-text">{props.description}</p>
-                            <ListForm />
-                        </div>
-                    </Card>
-                </div>
-            </div>
-        </form>
+        <>
+        {props.list.map((item) => (
+                <li className={classes.meal}>
+                    <div>
+                        <h3>{item.name}</h3>
+                        <div className={classes.description}>{item.description}</div>
+                        <div className={classes.price}>{item.price}</div>
+                    </div>
+                    <div>
+                        <ListForm />
+                    </div>
+                </li>
+                ))}
+</>
+
     )
 }
-export default ListItem
+export default React.memo(ListItem)

@@ -7,11 +7,12 @@ function Header(props) {
     return (
             <>
                 <header className={classes.header}>
-                    <h1><i className="fa fa-spinner fa-spin"></i>MyApp</h1>
+                    <h1>MyApp</h1>
                     <HeaderButton openCart ={props.openCart}/>
                 </header>
                 <div className={classes['main-image']}>
                 </div>
+                {/*<i className="fa fa-spinner fa-spin"></i>*/}
             </>
     )
 }

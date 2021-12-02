@@ -1,8 +1,13 @@
 import React from 'react'
 import ListItem from './ListItem'
+import { useState } from 'react'
+
+import InputItem from '../AddItem/InputItem'
 
 
-const items = [
+
+const List =() => {
+  const [enteredData, setEnteredData] = useState([
     {
       id: 'm1',
       name: 'Sushi',
@@ -21,24 +26,30 @@ const items = [
         description: 'Finest fish and veggies',
         price: 22.99,
       },
-]
-const List =() => {
-
+  
+  ])
+  
+  const dataHandler =(enteredName, enteredDesc, enteredPrice) => {
+    setEnteredData([...enteredData, {id:Math.random() , name:enteredName , description: enteredDesc, price: enteredPrice}])
+  }
+  
  
-const list = items.map((item) => (
-    <ListItem 
-    key={item.id}
-    name={item.name}
-    description={item.description}
-    price={item.price}
-    />
+const list = 
+    <ListItem  list={enteredData} />
     //console.log(item.name)
-))
+
 
     return (
-        <div>
+      <>
+      
+        <div className='card m-4'>
             {list}
-        </div>
+            </div>
+        <InputItem addData={dataHandler} />
+        
+      </>
+      
+      
     )
 }
 
