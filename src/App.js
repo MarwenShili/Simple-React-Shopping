@@ -12,11 +12,14 @@ function App() {
   const popUphandler = () => {
     setIsOpenPopUp(true)
   }
+  const closePopUp = () => {
+    setIsOpenPopUp(false)
+  }
 
   return (
     <div className="App">
       <Header openCart={popUphandler} />
-      {isOpenPopUp && <Cart />}
+      {isOpenPopUp && <Cart onClose={closePopUp} />}
      <List />
     </div>
   );
