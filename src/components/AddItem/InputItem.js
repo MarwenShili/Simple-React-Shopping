@@ -3,76 +3,79 @@ import { useState } from 'react'
 import ErrorModal from '../UI/ErrorModal';
 
 const InputItem = (props) => {
-    const [enteredName, setEnteredName] = useState();
-    const [enteredDescription, setEnteredDescription] = useState();
-    const [enteredPrice, setEnteredPrice] = useState();
-    const [error, setError] = useState();
+  const [enteredName, setEnteredName] = useState('');
+  const [enteredDescription, setEnteredDescription] = useState('');
+  const [enteredPrice, setEnteredPrice] = useState();
+  const [error, setError] = useState();
 
 
-    const nameHandler = (e) => {
-        setEnteredName(e.target.value)
-    }
-    const descriptionHandler = (e) => {
-        setEnteredDescription(e.target.value)
-    }
-    const priceHandler = (e) => {
-        setEnteredPrice(e.target.value)
-    }
+  const submitHandler = (event) => {
+       event.preventDefault();
+        if (enteredName.trim().length === 0 || enteredDescription.trim().length === 0) {
+          setError({
+            title: 'Invalid input',
+            message: 'Please enter a valid name and age (non-empty values).',
+           });
+           return;
+        }
+         if (+enteredPrice < 1) {
+           setError({
+             title: 'Invalid age',
+             message: 'Please enter a valid age (> 0).',
+           });
+           return;
+         }
+         props.onAddUser(enteredName, enteredDescription, enteredPrice);
+         setEnteredName('');
+         setEnteredDescription('');
+       };
+    
+       const nameHandler = (event) => {
+         setEnteredName(event.target.value);
+     };
+    
+       const descriptionHandler = (event) => {
+         setEnteredDescription(event.target.value);
+       };
+       const priceHandler = (event) => {
+        setEnteredPrice(event.target.value);
+      };
+   
+    
+       const errorHandler = () => {
+         setError(null);
+      };
+    
+  
 
-
-    const submitHandler = (e) => {
-        e.preventDefault()
-        if (enteredName.trim().length === 0 || enteredDescription.trim().length === 0  ) {
-                  setError({
-                    title: 'Invalid input',
-                    message: 'Please enter a valid name and age (non-empty values).',
-                  });
-                  return;
-                }
-                if (+enteredPrice < 1) {
-                  setError({
-                    title: 'Invalid age',
-                    message: 'Please enter a valid age (> 0).',
-                  });
-                  return;
-                }
-                props.addData(enteredName, enteredDescription, enteredPrice);
-                setEnteredName('');
-                setEnteredDescription('');
-                setEnteredPrice('')
-    }
-    const errorHandler = () => {
-            setError(null);
-          };
-
-    return (
-        <>
-        {error && (
-                    <ErrorModal
-                      title={error.title}
-                      message={error.message}
-                      onConfirm={errorHandler}
-                    />
-                  )}
-         <div className="card col-12">
-            <form onSubmit={submitHandler} className="col-12">
-                <div className={classes.control}>
-                    <label htmlFor='Name'>Name</label>
-                    <input type='text'  onChange={nameHandler} />
-                </div>
-                <div className={classes.control}>
-                    <label htmlFor='Description'>Description</label>
-                    <textarea rows='5'  onChange={descriptionHandler}></textarea>
-                </div>
-                <div className={classes.control}>
-                    <label htmlFor='price'>Price</label>
-                    <input onChange={priceHandler} />
-                </div>
-                <button type="submit" className="btn btn-dark m-4">Add</button>
-            </form>
-        </div> 
-</>
-    )
+  return (
+    <>
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
+      <div className="card col-12">
+        <form onSubmit={submitHandler} className="col-12">
+          <div className={classes.control}>
+            <label htmlFor='Name'>Name</label>
+            <input type='text' value={enteredName} onChange={nameHandler} />
+          </div>
+          <div className={classes.control}>
+            <label htmlFor='Description'>Description</label>
+            <textarea rows='5' value={enteredDescription} onChange={descriptionHandler}></textarea>
+          </div>
+          <div className={classes.control}>
+            <label htmlFor='price'>Price</label>
+            <input value={enteredPrice} onChange={priceHandler} />
+          </div>
+          <button type="submit" className="btn btn-dark m-4">Add</button>
+        </form>
+      </div>
+    </>
+  )
 }
 export default InputItem
 

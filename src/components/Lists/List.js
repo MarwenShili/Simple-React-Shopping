@@ -46,9 +46,11 @@ const List = () => {
     <>
       <section>
         <div className="text-center m-3">
-          <button className="btn btn-dark" onClick={shawForm}>add cart</button>
+          <button style={{marginTop:"-100px "}}  className="btn btn-dark" onClick={shawForm}>Add New Object</button>
         </div>
+        <div style={{marginTop:"-40px "}} >
         {isOpenInput && <InputItem addData={dataHandler} />}
+        </div>
       </section>
       <div className='card m-4'>
         {list}

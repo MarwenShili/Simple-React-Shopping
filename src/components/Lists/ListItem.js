@@ -6,19 +6,20 @@ const ListItem = (props) => {
     console.log(props.name)
     return (
         <>
-        {props.list.map((item) => (
+            {props.list.map((item) => (
                 <li className={classes.meal}>
                     <div>
                         <h3>{item.name}</h3>
                         <div className={classes.description}>{item.description}</div>
                         <div className={classes.price}>{item.price}</div>
                     </div>
-                    <div>
+                    <footer className={classes.actions}>
+
                         <ListForm />
-                    </div>
+                    </footer>
                 </li>
-                ))}
-</>
+            ))}
+        </>
 
     )
 }

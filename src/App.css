@@ -1,9 +1,16 @@
 
   section {
-    margin: 1rem auto;
-    width: 100%;
+    margin:  auto;
+    width: 85%;
     max-width: 80rem;
     background-color: white;
-    padding: 2rem;
+    padding: 2rem ;
     border-radius: 12px;
   }
+  @media (max-width: 768px) {
+    section{
+      width:100%;
+
+    }
+  }
+  

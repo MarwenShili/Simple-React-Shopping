@@ -1,1 +1,23 @@
 
+
+  .actions {
+    text-align: right;
+  }
+  
+
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: grey;
+    border-color: white;
+    color: white;
+  }
+  
+  .actions .button--alt {
+    color: black;
+  }
+  
+  .actions .button {
+    background-color: black;
+    color: white;
+  }

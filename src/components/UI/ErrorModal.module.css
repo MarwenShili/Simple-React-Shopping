@@ -12,19 +12,16 @@
     position: fixed;
     top: 30vh;
     left: 10%;
-    width: 80%;
+    width: 100%;
     z-index: 100;
     overflow: hidden;
   }
   
-  .header {
-    background: #4f005f;
-    padding: 1rem;
-  }
+
   
   .header h2 {
     margin: 0;
-    color: white;
+    color: black;
   }
   
   .content {

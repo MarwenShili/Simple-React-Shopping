@@ -1,24 +1,26 @@
 import React from 'react';
 
-import Card from './Card';
+
 
 import classes from './ErrorModal.module.css';
+import Modal from './Modal';
 
 const ErrorModal = (props) => {
   return (
     <div>
-      <div className={classes.backdrop} onClick={props.onConfirm} />
-      <Card className={classes.modal}>
+      <Modal onClick={props.onConfirm} >
+      <div>
         <header className={classes.header}>
           <h2>{props.title}</h2>
         </header>
         <div className={classes.content}>
-          <p>{props.message}</p>
+          <h4>{props.message}</h4>
         </div>
         <footer className={classes.actions}>
-          <button onClick={props.onConfirm}>Okay</button>
+          <button className="btn btn-dark" onClick={props.onConfirm}>Okay</button>
         </footer>
-      </Card>
+      </div>
+      </Modal>
     </div>
   );
 };
