@@ -20,7 +20,9 @@ function App() {
     <div className="App">
       <Header openCart={popUphandler} />
       {isOpenPopUp && <Cart onClose={closePopUp} />}
+      <section>
      <List />
+     </section>
     </div>
   );
 }

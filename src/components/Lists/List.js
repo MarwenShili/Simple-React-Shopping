@@ -7,6 +7,8 @@ import InputItem from '../AddItem/InputItem'
 
 
 const List =() => {
+  const [isOpenInput, setIsOpenInput] = useState(false)
+
   const [enteredData, setEnteredData] = useState([
     {
       id: 'm1',
@@ -34,19 +36,25 @@ const List =() => {
   }
   
  
-const list = 
-    <ListItem  list={enteredData} />
-    //console.log(item.name)
+const list = <ListItem  list={enteredData} />
+   
+const shawForm =() =>{
+  setIsOpenInput(isOpenInput => ! isOpenInput);
+}
 
 
     return (
       <>
-      
+       <section>
+         <div className="text-center m-3"> 
+         <button className="btn btn-dark" onClick={shawForm}>add cart</button>
+         </div>
+        {isOpenInput && <InputItem addData={dataHandler} />}
+        </section>
         <div className='card m-4'>
             {list}
             </div>
-        <InputItem addData={dataHandler} />
-        
+           
       </>
       
       

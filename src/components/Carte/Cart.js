@@ -6,7 +6,6 @@ function Cart(props) {
     return (
         <div>
             <Modal onClick={props.onClose} >
-                
                 <div className={classes.total}>
                     <span>Total Amount</span>
                     <span>250</span>
