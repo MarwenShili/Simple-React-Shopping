@@ -1,5 +1,6 @@
 import classes from './InputItem.module.css'
 import { useState } from 'react'
+import ErrorModal from '../UI/ErrorModal';
 
 const InputItem = (props) => {
     const [enteredName, setEnteredName] = useState();
@@ -21,11 +22,38 @@ const InputItem = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        props.addData(enteredName, enteredDescription, enteredPrice);
+        if (enteredName.trim().length === 0 || enteredDescription.trim().length === 0  ) {
+                  setError({
+                    title: 'Invalid input',
+                    message: 'Please enter a valid name and age (non-empty values).',
+                  });
+                  return;
+                }
+                if (+enteredPrice < 1) {
+                  setError({
+                    title: 'Invalid age',
+                    message: 'Please enter a valid age (> 0).',
+                  });
+                  return;
+                }
+                props.addData(enteredName, enteredDescription, enteredPrice);
+                setEnteredName('');
+                setEnteredDescription('');
+                setEnteredPrice('')
     }
+    const errorHandler = () => {
+            setError(null);
+          };
 
     return (
-
+        <>
+        {error && (
+                    <ErrorModal
+                      title={error.title}
+                      message={error.message}
+                      onConfirm={errorHandler}
+                    />
+                  )}
          <div className="card col-12">
             <form onSubmit={submitHandler} className="col-12">
                 <div className={classes.control}>
@@ -43,7 +71,7 @@ const InputItem = (props) => {
                 <button type="submit" className="btn btn-dark m-4">Add</button>
             </form>
         </div> 
-
+</>
     )
 }
 export default InputItem
