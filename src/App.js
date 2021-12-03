@@ -4,6 +4,7 @@ import Cart from './components/Carte/Cart';
 import Header from './components/header/Header';
 import List from './components/Lists/List';
 import { useState } from 'react';
+import ErrorModal from './components/UI/ErrorModal';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       {isOpenPopUp && <Cart onClose={closePopUp} />}
       <section>
      <List />
+     {/* <ErrorModal /> */}
      </section>
     </div>
   );
