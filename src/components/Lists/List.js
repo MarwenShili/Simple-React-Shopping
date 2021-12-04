@@ -12,26 +12,27 @@ const List = () => {
     {
       id: 'm1',
       name: 'Sushi',
-      description: 'Finest fish and veggies',
+      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos clients des informations importantes',
       price: 22.99,
     },
     {
       id: 'm2',
       name: 'Sushi',
-      description: 'Finest fish and veggies',
+      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos clients des informations importantes',
       price: 22.99,
     },
     {
       id: 'm3',
       name: 'Sushi',
-      description: 'Finest fish and veggies',
+      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos clients des informations importantes',
       price: 22.99,
     },
 
   ])
 
   const dataHandler = (enteredName, enteredDesc, enteredPrice) => {
-    setEnteredData([...enteredData, { id: Math.random(), name: enteredName, description: enteredDesc, price: enteredPrice }])
+    setEnteredData([...enteredData, { id: Math.random(), name: enteredName, description: enteredDesc, price: enteredPrice }
+                  ])
   }
 
   const list = <ListItem list={enteredData} />
@@ -49,7 +50,7 @@ const List = () => {
           <button style={{marginTop:"-100px "}}  className="btn btn-dark" onClick={shawForm}>Add New Object</button>
         </div>
         <div style={{marginTop:"-40px "}} >
-        {isOpenInput && <InputItem addData={dataHandler} />}
+        {isOpenInput && <InputItem addCard={dataHandler} />}
         </div>
       </section>
       <div className='card m-4'>

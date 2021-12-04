@@ -10,43 +10,44 @@ const InputItem = (props) => {
 
 
   const submitHandler = (event) => {
-       event.preventDefault();
-        if (enteredName.trim().length === 0 || enteredDescription.trim().length === 0) {
-          setError({
-            title: 'Invalid input',
-            message: 'Please enter a valid name and age (non-empty values).',
-           });
-           return;
-        }
-         if (+enteredPrice < 1) {
-           setError({
-             title: 'Invalid age',
-             message: 'Please enter a valid age (> 0).',
-           });
-           return;
-         }
-         props.onAddUser(enteredName, enteredDescription, enteredPrice);
-         setEnteredName('');
-         setEnteredDescription('');
-       };
-    
-       const nameHandler = (event) => {
-         setEnteredName(event.target.value);
-     };
-    
-       const descriptionHandler = (event) => {
-         setEnteredDescription(event.target.value);
-       };
-       const priceHandler = (event) => {
-        setEnteredPrice(event.target.value);
-      };
-   
-    
-       const errorHandler = () => {
-         setError(null);
-      };
-    
-  
+    event.preventDefault();
+    if (enteredName.trim().length === 0 || enteredDescription.trim().length === 0 || enteredPrice.trim().length === 0) {
+      setError({
+        title: 'Invalid input',
+        message: 'Please enter a valid values (non-empty values).',
+      });
+      return;
+    }
+    if (+enteredPrice < 1) {
+      setError({
+        title: 'Invalid Price',
+        message: 'Please enter a valid Price (> 0).',
+      });
+      return;
+    }
+    props.addCard(enteredName, enteredDescription, enteredPrice);
+    setEnteredName('');
+    setEnteredDescription('');
+    setEnteredPrice('')
+  };
+
+  const nameHandler = (event) => {
+    setEnteredName(event.target.value);
+  };
+
+  const descriptionHandler = (event) => {
+    setEnteredDescription(event.target.value);
+  };
+  const priceHandler = (event) => {
+    setEnteredPrice(event.target.value);
+  };
+
+
+  const errorHandler = () => {
+    setError(null);
+  };
+
+
 
   return (
     <>

@@ -14,7 +14,6 @@ const ListItem = (props) => {
                         <div className={classes.price}>{item.price}</div>
                     </div>
                     <footer className={classes.actions}>
-
                         <ListForm />
                     </footer>
                 </li>

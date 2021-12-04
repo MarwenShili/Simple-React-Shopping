@@ -21,9 +21,8 @@ function App() {
       <Header openCart={popUphandler} />
       {isOpenPopUp && <Cart onClose={closePopUp} />}
       <section>
-     <List />
-     
-     </section>
+        <List />
+      </section>
     </div>
   );
 }
