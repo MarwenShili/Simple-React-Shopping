@@ -4,6 +4,7 @@ import Cart from './components/Carte/Cart';
 import Header from './components/header/Header';
 import List from './components/Lists/List';
 import { useState } from 'react';
+import CartProvider from './Store/CartProvider';
 
 function App() {
 
@@ -17,14 +18,13 @@ function App() {
   }
 
   return (
-    <div >
+    <CartProvider>
       <Header openCart={popUphandler} />
       {isOpenPopUp && <Cart onClose={closePopUp} />}
       <section>
         <List />
       </section>
-    </div>
-  );
+      </CartProvider>  );
 }
 
 export default App;
