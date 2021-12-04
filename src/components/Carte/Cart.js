@@ -42,7 +42,7 @@ function Cart(props) {
                 {cartItems}
                 <div className={classes.total}>
                     <span>Total Price</span>
-                    <span>{CtxItem.totalAmount.toFixed(2)}</span>
+                    <span>{CtxItem.totalAmount.toFixed(2)} $</span>
                 </div>
                 <div className={classes.actions}>
                     <button className={classes['button--alt']} onClick={props.onClose}>

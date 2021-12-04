@@ -2,7 +2,7 @@ import React from 'react'
 import ListItem from './ListItem'
 import { useState } from 'react'
 import InputItem from '../AddItem/InputItem'
-
+//import classes from './List.module.css'
 
 
 const List = () => {
@@ -12,19 +12,19 @@ const List = () => {
     {
       id: 'm1',
       name: 'Sushi1',
-      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos clients des informations importantes',
+      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos ...',
       price: 22.99,
     },
     {
       id: 'm2',
       name: 'Sushi2',
-      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos clients des informations importantes',
+      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos ...',
       price: 22.99,
     },
     {
       id: 'm3',
       name: 'Sushi3',
-      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos clients des informations importantes',
+      description: 'Image result for description d une produit L objectif d une description produit est de fournir à vos ...',
       price: 22.99,
     },
 
@@ -65,7 +65,7 @@ const List = () => {
           {isOpenInput && <InputItem addCard={dataHandler} />}
         </div>
       </section>
-      <div className='card m-4'>
+      <div >
         {list}
       </div>
 
