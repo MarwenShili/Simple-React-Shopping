@@ -70,7 +70,7 @@ const InputItem = (props) => {
           </div>
           <div className={classes.control}>
             <label htmlFor='price'>Price</label>
-            <input value={enteredPrice} onChange={priceHandler} />
+            <input type="number" min="0" max="10000.00" step="1" value={enteredPrice} onChange={priceHandler} />
           </div>
           <button type="submit" className="btn btn-dark m-4">Add</button>
         </form>

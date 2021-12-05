@@ -17,15 +17,15 @@ const ListItem = (props) => {
 
     return (
         <Card>
-                <li className={classes.meal}>
+                <li className={classes.item}>
                     <div>
                         <h3>{props.name}</h3>
                         <div className={classes.description}>{props.description}</div>
                         <div className={classes.price}>{props.price} $</div>
                     </div>
-                    <footer className={classes.actions}>
+                    <div>
                         <ListForm id={props.id} onAddToCart={AddAmountToCart}/>
-                    </footer>
+                    </div>
                 </li>
             
         </Card>

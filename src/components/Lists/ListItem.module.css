@@ -1,5 +1,5 @@
 
-.meal {
+.item {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
@@ -7,12 +7,13 @@
     border-bottom: 3px solid #ccc;
   }
   
-  .meal h3 {
+  .item h3 {
     margin: 0 0 0.25rem 0;
   }
   
   .description {
     font-style: italic;
+    text-align: justify;
   }
   
   .price {
@@ -21,3 +22,12 @@
     color: crimson;
     font-size: 1.25rem;
   }
+
+
+  .actions {
+    text-align: right;
+  }
+
+ 
+  
+ 

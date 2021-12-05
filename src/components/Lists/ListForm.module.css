@@ -1,23 +1,17 @@
+.form {
+  text-align: right;
+}
 
+.form button {
+  font: inherit;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 50%;
+}
 
-  .actions {
-    text-align: right;
-  }
-  
-
-  
-  .actions button:hover,
-  .actions button:active {
-    background-color: grey;
-    border-color: white;
-    color: white;
-  }
-  
-  .actions .button--alt {
-    color: black;
-  }
-  
-  .actions .button {
-    background-color: black;
-    color: white;
-  }
+.form button:hover,
+.form button:active {
+  background-color: gray;
+}

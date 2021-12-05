@@ -2,7 +2,7 @@ import React from 'react'
 import ListItem from './ListItem'
 import { useState } from 'react'
 import InputItem from '../AddItem/InputItem'
-//import classes from './List.module.css'
+import './List.module.css';
 
 
 const List = () => {
@@ -59,7 +59,7 @@ const List = () => {
     <>
       <section>
         <div className="text-center m-3">
-          <button style={{ marginTop: "-100px " }} className="btn btn-dark" onClick={shawForm}>Add New Object</button>
+          <button style={{ marginTop: "-100px ", fontWeight: "bold" }} className="btn btn-dark p-3" onClick={shawForm}>Add New Object</button>
         </div>
         <div style={{ marginTop: "-40px " }} >
           {isOpenInput && <InputItem addCard={dataHandler} />}
