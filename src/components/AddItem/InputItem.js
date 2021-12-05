@@ -1,6 +1,7 @@
 import classes from './InputItem.module.css'
 import { useState } from 'react'
 import ErrorModal from '../UI/ErrorModal';
+import Card from '../UI/Card';
 
 const InputItem = (props) => {
   const [enteredName, setEnteredName] = useState('');
@@ -59,7 +60,7 @@ const InputItem = (props) => {
         />
       )}
       <div className={classes.form}>
-      <div className="card col-12">
+      <Card>
         <form onSubmit={submitHandler} className="col-12">
           <div className={classes.control}>
             <label htmlFor='Name'>Name</label>
@@ -75,7 +76,7 @@ const InputItem = (props) => {
           </div>
           <button type="submit" className="btn btn-dark m-4">Add</button>
         </form>
-      </div>
+      </Card>
       </div>
     </>
   )

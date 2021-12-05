@@ -61,9 +61,10 @@ const List = () => {
         <div className="text-center m-3">
           <button style={{
             marginTop: "-135px ",
-            fontWeight: "bold"
+            fontWeight: "bold",
+            padding:"10px"
             }}
-            className="btn btn-dark  p-3"
+            className="btn btn-dark"
             onClick={shawForm}>Add New Food
           </button>
         </div>

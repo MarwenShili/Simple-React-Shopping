@@ -18,16 +18,19 @@ const ListItem = (props) => {
     return (
         <Card>
                 <li className={classes.item}>
-                    <div>
+                    <div className="col">
+                        <div>
                         <h3>{props.name}</h3>
                         <div className={classes.description}>{props.description}</div>
                         <div className={classes.price}>{props.price} $</div>
                     </div>
-                    <div>
+                   
+                    </div>
+                    <div className="col-3">
                         <ListForm id={props.id} onAddToCart={AddAmountToCart}/>
                     </div>
                 </li>
-            
+                
         </Card>
 
     )
