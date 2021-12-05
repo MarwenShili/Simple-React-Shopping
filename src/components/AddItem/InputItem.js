@@ -58,6 +58,7 @@ const InputItem = (props) => {
           onConfirm={errorHandler}
         />
       )}
+      <div className={classes.form}>
       <div className="card col-12">
         <form onSubmit={submitHandler} className="col-12">
           <div className={classes.control}>
@@ -74,6 +75,7 @@ const InputItem = (props) => {
           </div>
           <button type="submit" className="btn btn-dark m-4">Add</button>
         </form>
+      </div>
       </div>
     </>
   )
